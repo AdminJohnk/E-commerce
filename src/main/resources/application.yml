@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/product-management-db
+jwt:
+  secret: G4NXOV54N5KGVJBI4O59GBNVSODNGV8595HYJOGBNVOS92845CNAO4
