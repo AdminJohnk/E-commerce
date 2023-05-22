@@ -60,7 +60,7 @@ public class AuthenticationController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
     @GetMapping("/hello")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> sayHello(Principal principal) {
         return new ResponseEntity<>(String.format("Hello %s", principal.getName()), HttpStatus.OK);
     }

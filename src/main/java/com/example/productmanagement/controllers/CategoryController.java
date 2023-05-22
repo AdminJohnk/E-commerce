@@ -23,17 +23,17 @@ public class CategoryController {
     public ResponseEntity<Category> getCategory(@PathVariable String id) {
         return new ResponseEntity<>(categoryService.getCategory(id), HttpStatus.OK);
     }
-
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<Category> createCategory(@RequestBody CategoryDTO dto, Principal principal) {
         return new ResponseEntity<>(categoryService.create(dto, principal), HttpStatus.CREATED);
     }
-
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable String id, @RequestBody CategoryDTO dto, Principal principal) {
         return new ResponseEntity<>(categoryService.update(id, dto, principal), HttpStatus.OK);
     }
-
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Category> deleteCategory(@PathVariable String id) {
         return new ResponseEntity<>(categoryService.delete(id), HttpStatus.OK);
